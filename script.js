@@ -1,14 +1,20 @@
-const addNote = document.querySelector(".btn");
-const note = document.getElementById('note');
+const addBtn = document.querySelector(".add-btn");
 
-addNote.addEventListener('click', addNewNote())
+const notes = JSON.parse(localStorage.getItem('notes'));
 
-function addNewNote() {
-  const newNote = document.createElement('div')
-  newNote.classList.add('note')
-  newNote.innerHTML = note.value
-  newNote.appendChild
+if(notes) {
+  notes.foreach((note) => addNote(note))
+}
+
+addBtn.addEventListener('click', () => addNote())
+
+function addNote() {
+  const newNote = document.querySelector('.note')
+    newNote.classList.add('show')
+    console.log('it clicked')
+  
   
 }
-  
-
+function saveNote() {
+  const savedNote = localStorage.setItem(newNote)
+}
