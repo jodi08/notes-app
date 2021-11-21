@@ -1,10 +1,18 @@
 const addBtn = document.querySelector(".add-btn");
+const logoutBtn = document.querySelector('.btn-logout');
 
 const notes = JSON.parse(localStorage.getItem('savedNotes'));
 
 if(notes) {
   notes.foreach((note) => addNote(note))
 }
+logoutBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  username = ''
+  password = ''
+  window.location.replace('/login.html')
+  console.log('it worked')
+})
 
 addBtn.addEventListener('click', () => addNote())
 
