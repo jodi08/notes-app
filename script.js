@@ -1,6 +1,6 @@
 const addBtn = document.querySelector(".add-btn");
 
-const notes = JSON.parse(localStorage.getItem('notes'));
+const notes = JSON.parse(localStorage.getItem('savedNotes'));
 
 if(notes) {
   notes.foreach((note) => addNote(note))
@@ -16,5 +16,5 @@ function addNote() {
   
 }
 function saveNote() {
-  const savedNote = localStorage.setItem(newNote)
+  const savedNote = localStorage.setItem('notes', JSON.stringify(notes))
 }
